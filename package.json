@@ -12,6 +12,7 @@
     "core-js": "^3.8.3",
     "marked": "^13.0.1",
     "postcss": "^8.4.39",
+    "register-service-worker": "^1.7.2",
     "tailwindcss": "^3.4.4",
     "vue": "^3.2.13",
     "vue-flip": "^3.0.2"
@@ -23,6 +24,7 @@
     "@babel/plugin-transform-private-methods": "^7.24.7",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-pwa": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3"
