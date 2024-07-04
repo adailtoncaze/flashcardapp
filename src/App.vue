@@ -14,6 +14,8 @@ export default {
 </script>
 
 <style>
+@import 'tailwindcss/tailwind.css';
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;

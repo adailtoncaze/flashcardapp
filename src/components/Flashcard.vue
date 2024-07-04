@@ -1,15 +1,15 @@
 <template>
-  <div class="flashcard" @click="flipCard">
-    <div class="card" :class="{ flipped: isFlipped }">
-      <div class="front" v-html="frontContent"></div>
-      <div class="back" v-html="backContent"></div>
+  <div class="flashcard mx-auto my-4 p-6 rounded-lg shadow-lg bg-white transform hover:scale-105 transition-transform duration-300" @click="flipCard">
+    <div class="card relative w-full h-full" :class="{ flipped: isFlipped }">
+      <div class="front absolute w-full h-full flex items-center justify-center bg-green-custom rounded-lg p-4" v-html="frontContent"></div>
+      <div class="back absolute w-full h-full flex items-center justify-center bg-neutral-custom rounded-lg p-4 transform rotateY-180" v-html="backContent"></div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "flashcard-view",
+  name: "fashcard-view",
   props: {
     frontContent: String,
     backContent: String,
@@ -29,16 +29,13 @@ export default {
 
 <style scoped>
 .flashcard {
+  width: 500px;
+  height: 350px;
   perspective: 1000px;
-  width: 400px;
-  height: 300px;
-  margin: 20px auto;
-  cursor: pointer;
 }
 .card {
   width: 100%;
   height: 100%;
-  position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s;
 }
@@ -46,17 +43,11 @@ export default {
   transform: rotateY(180deg);
 }
 .front, .back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
   backface-visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  color: white;
 }
 .back {
   transform: rotateY(180deg);

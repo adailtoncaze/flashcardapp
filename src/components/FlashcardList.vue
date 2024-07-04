@@ -1,14 +1,15 @@
 <template>
-  <div>
+  <div class="text-center">
     <flashcard
       v-if="currentCardIndex >= 0 && currentCardIndex < flashcards.length"
+      :key="currentCardIndex" 
       :frontContent="flashcards[currentCardIndex].front"
       :backContent="flashcards[currentCardIndex].back"
     />
-    <div class="navigation">
-      <button @click="prevCard" :disabled="currentCardIndex <= 0">Anterior</button>
-      <button @click="nextCard" :disabled="currentCardIndex >= flashcards.length - 1">Próximo</button>
-      <button @click="resetCards">Resetar</button>
+    <div class="navigation flex justify-center space-x-4 mt-6">
+      <button @click="prevCard" :disabled="currentCardIndex <= 0" class="btn btn-primary">Anterior</button>
+      <button @click="nextCard" :disabled="currentCardIndex >= flashcards.length - 1" class="btn btn-primary">Próximo</button>
+      <button @click="resetCards" class="btn btn-secondary">Resetar</button>
     </div>
   </div>
 </template>
@@ -39,27 +40,29 @@ export default {
     },
     resetCards() {
       this.$emit('reset');
+      window.location.reload(); // Reloads the page
     },
   },
 };
 </script>
 
 <style scoped>
-.navigation {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-button {
+.btn {
   padding: 10px 20px;
   border: none;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
   border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
-button:disabled {
+.btn-primary {
+  background-color: #3FB27F;
+  color: white;
+}
+.btn-primary:disabled {
   background-color: #ccc;
+}
+.btn-secondary {
+  background-color: #32475B;
+  color: white;
 }
 </style>
