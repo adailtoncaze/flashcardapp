@@ -48,6 +48,10 @@ export default {
   align-items: center;
   justify-content: center;
   color: white;
+  @media screen and (max-width: 600px) {
+    padding-left: 60px;
+    padding-right: 60px;
+}
 }
 .back {
   transform: rotateY(180deg);
